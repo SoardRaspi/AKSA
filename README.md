@@ -11,4 +11,4 @@
 <p>The title: <code>270 Road accidents in the past decade in Maharashtra.</code> does talk about genuine accidents, but the time span under study is a decade.</p>
 <p>The title: <code>Biker killed in a road accident.</code> talks about a true road accident and the time span is less than 7 days before the article was published.</p>
 
-<p>As shown in the above three example titles, the first two are filtered and only the article corresponding to the third title is completely scraped. One all the sentences are extracted from the article, the word tokens related to location are identified and then the location coordinates are obtained by using the </p>
+<p>As shown in the above three example titles, the first two are ignored and only the article corresponding to the third title is completely scraped. Once all the sentences are extracted from the article, the word tokens related to location are identified and then the location coordinates are obtained by using the <code><a href="https://apihub.latlong.ai/">LatLong geocoding API.</a></code></p>
