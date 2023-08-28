@@ -21,6 +21,8 @@
 
   <li>
     <h3>Geofencing</h3>
-    <p>The current example shows that of Maharashtra. Once the final data file is generated, the coordinates are grouped together in clusters such that in any cluster, the distance between any two points is less than or equal to the specified radius (currently set at 10km due to inaccurate coordinates). The clusters of coordinates once formed are then processed to find the <code>Convex Hull</code> of these clusters and the coordinates of the outer points are returned by the Flask server.</p>
+    <p>The current example shows that of Maharashtra. Once the final data file is generated, the coordinates are grouped together in clusters such that in any cluster, the distance between any two points is less than or equal to the specified radius (currently set at 10km due to inaccurate coordinates and to get reasonable geo-fences). The clusters of coordinates once formed are then processed to find the <code>Convex Hull</code> of these clusters and the coordinates of the outer points are returned by the Flask server.</p>
+
+    <p>The returned list of coordinates is received by the <code>AKSA App</code>.</p>
   </li>
 </ul>
