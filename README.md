@@ -14,7 +14,7 @@
 
 <p>Once the token index of all the related word tokens are identified from the article, the location coordinates are obtained by using the <code><a href="https://apihub.latlong.ai/">LatLong geocoding API</a></code>.</p>
 
-<p>The The query for the Geocoding API is a string obtained by concatenating the found word with the children of that word with <code>dep</code> tokens among <code><ul><li>ORG</li><li>GPE</li><li>FAC</li><li>LOC</li><li>PRODUCT</li><li>NORP</li><li>PERSON</li></ul></code></p>
+<p>The The query for the Geocoding API is a string obtained by concatenating the found word with the children of that word with <code>dep</code> tokens among <ul><li><code>ORG</code></li><li><code>GPE</code></li><li><code>FAC</code></li><li><code>LOC</code></li><li><code>PRODUCT</code></li><li><code>NORP</code></li><li><code>PERSON</code></li></ul></p>
   </li>
 
   <li>
