@@ -14,10 +14,13 @@
 
 <p>Once the token index of all the related word tokens are identified from the article, the location coordinates are obtained by using the <code><a href="https://apihub.latlong.ai/">LatLong geocoding API</a></code>.</p>
 
-<p>The The query for the Geocoding API is a string obtained by concatenating the found word with the children of that word with <code>dep</code> tokens among <ul><li><code>ORG</code></li><li><code>GPE</code></li><li><code>FAC</code></li><li><code>LOC</code></li><li><code>PRODUCT</code></li><li><code>NORP</code></li><li><code>PERSON</code></li></ul></p>
+<p>The query for the Geocoding API is a string obtained by concatenating the found word with the children of that word with <code>dep</code> tokens among <ul><li><code>ORG</code></li><li><code>GPE</code></li><li><code>FAC</code></li><li><code>LOC</code></li><li><code>PRODUCT</code></li><li><code>NORP</code></li><li><code>PERSON</code></li></ul> and separate sentences where the determinants are placed.</p>
+
+<p>Once the list of sentences of interest are extracted for each article, we check if the sentence contains any word(s) suggesting that the sentence is a road. If the sentence is a road, that sentence is not geocoded using the API. A final data file is thus generated with each row containing the road names (if any) and the GPS coordinates of the other location names.</p>
   </li>
 
   <li>
-    
+    <h3>Geofencing</h3>
+    <p>The current example shows that of Maharashtra. Once the final data file is generated, the coordinates are grouped together in clusters such that in any cluster, the distance between any two points is less than or equal to the specified radius (currently set at 10km due to inaccurate coordinates). The clusters of coordinates once formed are then processed to find the <code>Convex Hull</code> of these clusters and the coordinates of the outer points are returned by the Flask server.</p>
   </li>
 </ul>
