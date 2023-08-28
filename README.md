@@ -8,13 +8,13 @@
 <ul>
   <li>
     <h3>Data Preprocessing</h3>
-<p>The data of accidents is obtained by scraping news articles from Times of India. Data collection is done by scraping and the articles are then filtered using NLP. The first level of filtering is done on only the haedings to identify if the article does contain details of a particular accident.eg. </p>
+<p>The data of accidents is obtained by scraping news articles from Times of India. Data collection is done by scraping the articles and the the sentences of interests are filtered using NLP.</p>
 
-<p>The title: <code>Biker fakes rd accident to extort Rs. 20000 and a gold ring.</code> talks about a false road accident.</p>
-<p>The title: <code>270 Road accidents in the past decade in Maharashtra.</code> does talk about genuine accidents, but the time span under study is a decade.</p>
-<p>The title: <code>Biker killed in a road accident.</code> talks about a true road accident and the time span is less than 7 days before the article was published.</p>
+<p><code>spacy</code> library is used in conjunction with the <code>en_core_web_md</code> model of spacy. This library is used to get the POS (Part of Speech) tag of each word token in that sentence. To find the accident-related sentences, the code finds words that suggest accidents and injuries .eg. crash, killed, injured, etc. If the the words similar to these words are found, the articles corresponding to that title is scraped. To get the constant array of words similar to the words of interest, <code>gensim</code> library is used.</p>
 
-<p>As shown in the above three example titles, the first two are ignored and only the article corresponding to the third title is completely scraped. Once all the sentences are extracted from the article, the word tokens related to location are identified and then the location coordinates are obtained by using the <code><a href="https://apihub.latlong.ai/">LatLong geocoding API.</a></code></p>
+<p>Once the token index of all the related word tokens are identified from the article, the location coordinates are obtained by using the <code><a href="https://apihub.latlong.ai/">LatLong geocoding API</a></code>.</p>
+
+<p>The The query for the Geocoding API is a string obtained by concatenating the found word with the children of that word with <code>dep</code> tokens among <code><ul><li>ORG</li><li>GPE</li><li>FAC</li><li>LOC</li><li>PRODUCT</li><li>NORP</li><li>PERSON</li></ul></code></p>
   </li>
 
   <li>
