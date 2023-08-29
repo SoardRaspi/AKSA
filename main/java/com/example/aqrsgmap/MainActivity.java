@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         GoogleMap.OnPolygonClickListener {
 
     private GoogleMap mMap;
-    Button reportBtn;
+    // Button reportBtn;
     private static final int PATTERN_GAP_LENGTH_PX = 20;
     private static final PatternItem DOT = new Dot();
     private static final PatternItem GAP = new Gap(PATTERN_GAP_LENGTH_PX);
@@ -122,7 +122,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         mapFragment.getMapAsync(this);
 
         locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-        reportBtn = (Button) findViewById(R.id.report_btn);
+        // reportBtn = (Button) findViewById(R.id.report_btn);
         view_FAB = (FloatingActionButton) findViewById(R.id.view);
         pin_curr = (FloatingActionButton) findViewById(R.id.pointer_curr);
 
@@ -214,22 +214,22 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
             }
         }
 
-        reportBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                LatLng curr_loc = new LatLng(location.getLatitude(), location.getLongitude());
-//                PolyUtil.containsLocation(dubbo, polygon1.getPoints(), false);
+//         reportBtn.setOnClickListener(new View.OnClickListener() {
+//             @Override
+//             public void onClick(View view) {
+//                 LatLng curr_loc = new LatLng(location.getLatitude(), location.getLongitude());
+// //                PolyUtil.containsLocation(dubbo, polygon1.getPoints(), false);
 
-//                for (int i = 0; i < fence_list.size(); i++){
-//                    mMap.addPolygon(fence_list.get(i));
-//                }
+// //                for (int i = 0; i < fence_list.size(); i++){
+// //                    mMap.addPolygon(fence_list.get(i));
+// //                }
 
-                Intent intent = new Intent(MainActivity.this, ReportActivity.class);
-                intent.putExtra("lat", location.getLatitude());
-                intent.putExtra("long", location.getLongitude());
-                startActivity(intent);
-            }
-        });
+//                 Intent intent = new Intent(MainActivity.this, ReportActivity.class);
+//                 intent.putExtra("lat", location.getLatitude());
+//                 intent.putExtra("long", location.getLongitude());
+//                 startActivity(intent);
+//             }
+//         });
 
         pin_curr.setOnClickListener(new View.OnClickListener() {
             @Override
