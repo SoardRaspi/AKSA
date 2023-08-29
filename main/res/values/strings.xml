@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">AQRSGmap</string>
+    <string name="provider_failed">provider failed</string>
+    <string name="i_am_here">I am here</string>
+</resources>
